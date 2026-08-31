@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+/* KM Consultoria — paleta extraida da logo (azul institucional + vermelho). */
+:root {
+  --color-bg: #ffffff;
+  --color-fg: #16232e;
+  --color-muted: #5b6b76;
+  --color-surface: #f4f7f9;
+  --color-border: #e2e8ec;
+
+  --color-primary: #0d5a90;
+  --color-primary-foreground: #ffffff;
+  --color-accent: #e2333c;
+  --color-accent-foreground: #ffffff;
+
+  --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-body);
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-fg: var(--color-fg);
+  --color-muted: var(--color-muted);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-primary: var(--color-primary);
+  --color-primary-foreground: var(--color-primary-foreground);
+  --color-accent: var(--color-accent);
+  --color-accent-foreground: var(--color-accent-foreground);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
