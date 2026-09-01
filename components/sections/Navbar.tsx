@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 
 type NavLink = { label: string; href: string };
@@ -27,16 +26,18 @@ export function Navbar({ logo, links, ctaLabel, ctaHref }: NavbarProps) {
   }, []);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-40 transition-colors",
-        scrolled ? "bg-bg/90 backdrop-blur border-b border-border" : "bg-transparent"
-      )}
-    >
-      <Container className="flex h-16 items-center justify-between md:h-20">
-        <div className="text-lg font-semibold">{logo}</div>
+    <header className="fixed inset-x-0 top-4 z-40 px-4">
+      <div
+        className={cn(
+          "mx-auto flex h-16 w-full max-w-4xl items-center justify-between rounded-full border px-4 pl-6 transition-all duration-300",
+          scrolled
+            ? "border-border/60 bg-bg/70 shadow-lg shadow-black/5 backdrop-blur-xl"
+            : "border-white/40 bg-bg/40 backdrop-blur-md"
+        )}
+      >
+        <div className="text-base font-semibold">{logo}</div>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {links.map((link) => (
             <a
               key={link.href}
@@ -47,7 +48,7 @@ export function Navbar({ logo, links, ctaLabel, ctaHref }: NavbarProps) {
             </a>
           ))}
           {ctaLabel && ctaHref && (
-            <Button href={ctaHref} className="px-4 py-2">
+            <Button href={ctaHref} className="rounded-full px-4 py-2">
               {ctaLabel}
             </Button>
           )}
@@ -58,13 +59,13 @@ export function Navbar({ logo, links, ctaLabel, ctaHref }: NavbarProps) {
           aria-label="Abrir menu"
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
-      </Container>
+      </div>
 
       {open && (
-        <div className="border-t border-border bg-bg md:hidden">
-          <Container className="flex flex-col gap-4 py-6">
+        <div className="mx-auto mt-2 w-full max-w-4xl rounded-3xl border border-border/60 bg-bg/90 p-6 shadow-lg backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-4">
             {links.map((link) => (
               <a
                 key={link.href}
@@ -76,11 +77,11 @@ export function Navbar({ logo, links, ctaLabel, ctaHref }: NavbarProps) {
               </a>
             ))}
             {ctaLabel && ctaHref && (
-              <Button href={ctaHref} className="w-full">
+              <Button href={ctaHref} className="w-full rounded-full">
                 {ctaLabel}
               </Button>
             )}
-          </Container>
+          </div>
         </div>
       )}
     </header>

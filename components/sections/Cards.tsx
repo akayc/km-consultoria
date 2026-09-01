@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
+import { Backdrop } from "@/components/ui/Backdrop";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
@@ -19,6 +20,7 @@ type CardsProps = {
   items: CardItem[];
   columns?: 2 | 3 | 4;
   tone?: "default" | "surface";
+  decor?: boolean; // blobs de gradiente + cards em glass, no lugar do fundo chapado
 };
 
 const colClasses = {
@@ -35,9 +37,19 @@ export function Cards({
   items,
   columns = 3,
   tone = "default",
+  decor = false,
 }: CardsProps) {
   return (
-    <section id={id} className={cn("py-20 md:py-28", tone === "surface" && "bg-surface")}>
+    <section
+      id={id}
+      className={cn(
+        "relative overflow-hidden py-20 md:py-28",
+        tone === "surface" && "bg-surface",
+        decor && "bg-dot-grid"
+      )}
+    >
+      {decor && <Backdrop />}
+
       <Container>
         <Reveal>
           <div className="max-w-2xl">
@@ -52,7 +64,14 @@ export function Cards({
             const Icon = item.icon;
             return (
               <Reveal key={item.title} delay={Math.min(i * 0.06, 0.3)}>
-                <div className="h-full rounded-2xl border border-border bg-bg p-6">
+                <div
+                  className={cn(
+                    "h-full rounded-2xl border p-6 transition-colors",
+                    decor
+                      ? "border-white/50 bg-bg/60 backdrop-blur-md hover:bg-bg/80"
+                      : "border-border bg-bg"
+                  )}
+                >
                   {item.photo && (
                     <div className="relative mb-4 aspect-square w-16 overflow-hidden rounded-full">
                       <Image

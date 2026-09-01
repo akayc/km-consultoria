@@ -42,7 +42,7 @@ export default function Home() {
           primaryCta={{ label: "Falar no WhatsApp", href: `https://wa.me/${WHATSAPP}` }}
           secondaryCta={{ label: "Conhecer a KM", href: "#sobre" }}
           image={{
-            src: "/images/karina-hero.jpg",
+            src: "/images/karina-hero.png",
             alt: "Karina Michelle Oliveira, Diretora Executiva da KM Consultoria",
           }}
         />
@@ -83,6 +83,7 @@ export default function Home() {
           eyebrow="Institucional"
           title="Propósito, visão, missão e valores"
           columns={2}
+          decor
           items={[
             {
               title: "Propósito",
@@ -183,6 +184,7 @@ export default function Home() {
           eyebrow="Diretora Executiva"
           title="Karina Michelle Oliveira"
           tone="surface"
+          decor
           image={{
             src: "/images/karina-perfil.jpg",
             alt: "Karina Michelle Oliveira",

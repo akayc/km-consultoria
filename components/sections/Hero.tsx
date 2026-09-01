@@ -1,6 +1,7 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Backdrop } from "@/components/ui/Backdrop";
 import Image from "next/image";
 
 type HeroProps = {
@@ -21,7 +22,9 @@ export function Hero({
   image,
 }: HeroProps) {
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+    <section className="relative overflow-hidden pt-32 pb-20 md:pt-40 md:pb-28">
+      <Backdrop variant="hero" />
+
       <Container
         className={image ? "grid items-center gap-12 md:grid-cols-2" : undefined}
       >
@@ -52,13 +55,13 @@ export function Hero({
 
         {image && (
           <Reveal delay={0.15}>
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-[3/4]">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
                 priority
-                className="object-cover"
+                className="object-contain object-bottom drop-shadow-2xl"
               />
             </div>
           </Reveal>

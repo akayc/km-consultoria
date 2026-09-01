@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
+import { Backdrop } from "@/components/ui/Backdrop";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -11,6 +12,7 @@ type SectionProps = {
   image?: { src: string; alt: string };
   imageSide?: "left" | "right";
   tone?: "default" | "surface" | "primary";
+  decor?: boolean; // blobs de gradiente + grid de pontos, no lugar do fundo cinza chapado
 };
 
 const tones = {
@@ -27,9 +29,15 @@ export function Section({
   image,
   imageSide = "right",
   tone = "default",
+  decor = false,
 }: SectionProps) {
   return (
-    <section id={id} className={cn("py-20 md:py-28", tones[tone])}>
+    <section
+      id={id}
+      className={cn("relative overflow-hidden py-20 md:py-28", tones[tone], decor && "bg-dot-grid")}
+    >
+      {decor && <Backdrop />}
+
       <Container
         className={cn(
           image && "grid items-center gap-12 md:grid-cols-2",
