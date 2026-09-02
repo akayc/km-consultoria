@@ -8,7 +8,7 @@ type Member = {
   name: string;
   role: string;
   bio?: string;
-  photo?: { src: string; alt: string };
+  photo?: { src: string; alt: string; position?: string; zoom?: number };
 };
 
 type TeamProps = {
@@ -42,7 +42,11 @@ export function Team({ id, eyebrow, title, description, members, tone = "default
                       src={member.photo.src}
                       alt={member.photo.alt}
                       fill
-                      className="object-cover"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: member.photo.position ?? "center top",
+                        transform: member.photo.zoom ? `scale(${member.photo.zoom})` : undefined,
+                      }}
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center">

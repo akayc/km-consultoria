@@ -226,18 +226,31 @@ export default function Home() {
             {
               name: "Karina Michelle",
               role: "Enfermeira · Diretora Executiva",
-              photo: { src: "/images/karina-perfil.jpg", alt: "Karina Michelle" },
+              photo: {
+                src: "/images/karina-perfil.jpg",
+                alt: "Karina Michelle",
+                position: "center 20%",
+                zoom: 1.4,
+              },
             },
             {
               name: "Marlla Katherine",
               role: "Médica Clínica",
-              photo: { src: "/images/marlla.jpg", alt: "Marlla Katherine" },
+              photo: { 
+                src: "/images/marlla.jpg", 
+                alt: "Marlla Katherine", 
+                position: "center 40%"
+              },
               bio: "Médica responsável pela atuação clínica da equipe, atuando diretamente no atendimento e acompanhamento dos pacientes junto às unidades de saúde atendidas pela KM Consultoria.",
             },
             {
               name: "Augusto Kayc",
               role: "Engenheiro da Computação · Coordenador do Sistema de Informação SUS",
-              photo: { src: "/images/kayc.jpg", alt: "Augusto Kayc" },
+              photo: {
+                src: "/images/kayc.jpg",
+                alt: "Augusto Kayc",
+                position: "center 30%",
+              },
               bio: "Responsável pela área de tecnologia da KM Consultoria. Atua como Coordenador do Sistema de Informação do SUS, à frente da infraestrutura digital, sistemas e ferramentas que dão suporte à operação da empresa.",
             },
           ]}
