@@ -31,6 +31,19 @@
   --font-body: var(--font-body);
 }
 
+@theme {
+  --animate-aurora: aurora 60s linear infinite;
+}
+
+@keyframes aurora {
+  from {
+    background-position: 50% 50%, 50% 50%;
+  }
+  to {
+    background-position: 350% 50%, 350% 50%;
+  }
+}
+
 body {
   background: var(--color-bg);
   color: var(--color-fg);
@@ -41,6 +54,18 @@ body {
 .bg-dot-grid {
   background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
   background-size: 22px 22px;
+}
+
+/* Vars cruas usadas pelo aurora-background (substitui o plugin addVariablesForColors do Tailwind v3) */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --transparent: transparent;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --indigo-300: #a5b4fc;
+  --violet-200: #ddd6fe;
 }
 
 @media (prefers-reduced-motion: reduce) {

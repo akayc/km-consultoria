@@ -2,12 +2,14 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Container } from "@/components/ui/Container";
 import { cn } from "@/lib/utils";
 
+type TagGroup = { label: string; description?: string; tags: string[] };
+
 type TagListProps = {
   id?: string;
   eyebrow?: string;
   title: string;
   description?: string;
-  groups: { label: string; tags: string[] }[];
+  groups: TagGroup[];
   tone?: "default" | "surface";
 };
 
@@ -30,21 +32,24 @@ export function TagList({
           </div>
         </Reveal>
 
-        <div className="mt-10 space-y-8">
+        <div className="mt-14 space-y-10">
           {groups.map((group, i) => (
-            <Reveal key={group.label} delay={Math.min(i * 0.08, 0.3)}>
-              <div>
-                <p className="mb-3 text-sm font-medium text-fg/70">{group.label}</p>
-                <div className="flex flex-wrap gap-2">
-                  {group.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-border bg-bg px-4 py-1.5 text-sm text-fg/80"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+            <Reveal key={group.label} delay={Math.min(i * 0.15, 0.6)}>
+              <div className="overflow-hidden rounded-2xl border border-border bg-bg">
+                <div className="border-b border-border bg-surface px-6 py-5 md:px-8">
+                  <h3 className="text-lg font-semibold">{group.label}</h3>
+                  {group.description && (
+                    <p className="mt-1 text-sm text-muted">{group.description}</p>
+                  )}
                 </div>
+                <ul className="grid grid-cols-1 gap-x-8 gap-y-3 px-6 py-6 sm:grid-cols-2 md:px-8 lg:grid-cols-3">
+                  {group.tags.map((tag) => (
+                    <li key={tag} className="flex items-center gap-2.5 text-sm text-fg/85">
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           ))}

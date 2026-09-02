@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "KM Consultoria em Serviços Médicos e de Saúde",
   description:
     "Consultoria especializada em gestão, coordenação e execução de serviços de saúde para municípios e unidades públicas e privadas.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-512.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

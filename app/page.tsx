@@ -1,10 +1,11 @@
 import Image from "next/image";
-import { Heart, Compass, Target, ShieldCheck, User, MapPin } from "lucide-react";
+import { Heart, Compass, Target, ShieldCheck, MapPin } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { Section } from "@/components/sections/Section";
 import { Cards } from "@/components/sections/Cards";
 import { TagList } from "@/components/sections/TagList";
+import { Team } from "@/components/sections/Team";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
@@ -36,7 +37,6 @@ export default function Home() {
 
       <main>
         <Hero
-          eyebrow="Consultoria em Serviços Médicos e de Saúde desde 2017"
           title="Gestão qualificada para fortalecer a saúde pública e privada"
           description="A KM Consultoria gerencia, organiza e coordena unidades de saúde — hospitais, policlínicas, PSF, UBS, CAPS e demais órgãos — com profissionais qualificados e atendimento humanizado."
           primaryCta={{ label: "Falar no WhatsApp", href: `https://wa.me/${WHATSAPP}` }}
@@ -45,6 +45,7 @@ export default function Home() {
             src: "/images/karina-hero.png",
             alt: "Karina Michelle Oliveira, Diretora Executiva da KM Consultoria",
           }}
+          badges={["Consultoria em Serviços Médicos e de Saúde desde 2017"]}
         />
 
         <Section id="sobre" eyebrow="Sobre nós" title="Quem é a KM Consultoria">
@@ -121,6 +122,7 @@ export default function Home() {
           groups={[
             {
               label: "Prestadores de serviços de saúde",
+              description: "Equipe multidisciplinar disponibilizada para compor o quadro técnico da unidade contratante.",
               tags: [
                 "Médico",
                 "Enfermeiro",
@@ -136,6 +138,7 @@ export default function Home() {
             },
             {
               label: "Especialidades médicas",
+              description: "Cobertura ambulatorial e consultiva nas principais especialidades clínicas e cirúrgicas.",
               tags: [
                 "Médico clínico",
                 "Gastroenterologia",
@@ -149,6 +152,7 @@ export default function Home() {
             },
             {
               label: "Serviços e exames",
+              description: "Estrutura de apoio diagnóstico para consultas e acompanhamento clínico.",
               tags: ["Laboratório", "ECG — Eletrocardiograma", "EDA — Endoscopia", "USG — Ultrassonografia"],
             },
           ]}
@@ -157,7 +161,7 @@ export default function Home() {
         <Cards
           id="cidades"
           eyebrow="Trajetória"
-          title="Cidades onde já atuamos"
+          title="Onde já atuamos"
           columns={3}
           items={[
             {
@@ -181,14 +185,10 @@ export default function Home() {
         />
 
         <Section
+          id="karina"
           eyebrow="Diretora Executiva"
           title="Karina Michelle Oliveira"
-          tone="surface"
-          decor
-          image={{
-            src: "/images/karina-perfil.jpg",
-            alt: "Karina Michelle Oliveira",
-          }}
+          image={{ src: "/images/karina-perfil.jpg", alt: "Karina Michelle Oliveira" }}
           imageSide="left"
         >
           <p>
@@ -196,43 +196,49 @@ export default function Home() {
             Hospitalar e Serviços de Saúde.
           </p>
           <p>
-            Já atuou como Coordenadora Administrativa da atenção básica no
-            Município de Riachão do Jacuípe, Diretora Administrativa do
-            Hospital Municipal de Riachão do Jacuípe, Diretora do Hospital
-            Municipal de Itiúba e Coordenadora da atenção básica. Foi também
-            Responsável Técnica do Instituto Médico e Cirúrgico da Bahia
-            (IMC), Assessora Técnica na atenção à saúde dos municípios de
-            Piraí do Norte e Ourolândia, Enfermeira plantonista no Hospital
-            Municipal de Ourolândia e Coordenadora do Centro de Covid-19 do
-            Município de Várzea Nova.
+            Experiência profissional como Coordenadora Administrativa da
+            atenção básica no Município de Riachão do Jacuípe, Diretora
+            Administrativa do Hospital Municipal de Riachão do Jacuípe,
+            Diretora do Hospital Municipal de Itiúba e Coordenadora da atenção
+            básica.
+          </p>
+          <p>
+            Foi também Responsável Técnica do Instituto Médico e Cirúrgico da
+            Bahia (IMC), Assessora Técnica na atenção à saúde do Município de
+            Piraí do Norte, Assessora Técnica na atenção à saúde de média e
+            alta complexidade no Município de Ourolândia, Enfermeira
+            plantonista no Hospital Municipal de Ourolândia e Coordenadora do
+            Centro de Covid-19 do Município de Várzea Nova.
           </p>
           <p>
             Atualmente é Diretora Executiva da KM Consultoria em Serviços
-            Médicos e de Saúde e Coordenadora de Enfermagem do Hospital
-            Municipal Florisvaldo Josuel do Araújo.
+            Médicos e de Saúde e Diretora da UPA Dr. João Oliveira, em
+            Juazeiro.
           </p>
         </Section>
 
-        <Cards
+        <Team
           id="equipe"
           eyebrow="Equipe"
           title="Quem toca a KM Consultoria"
-          columns={3}
-          items={[
+          tone="surface"
+          members={[
             {
-              title: "Karina Michelle Oliveira",
-              description: "Enfermeira · Diretora Executiva",
-              photo: { src: "/images/karina-perfil.jpg", alt: "Karina Michelle Oliveira" },
+              name: "Karina Michelle",
+              role: "Enfermeira · Diretora Executiva",
+              photo: { src: "/images/karina-perfil.jpg", alt: "Karina Michelle" },
             },
             {
-              title: "Kayc",
-              description: "Engenheiro da Computação (em formação) · Tecnologia",
-              icon: User,
+              name: "Marlla Katherine",
+              role: "Médica Clínica",
+              photo: { src: "/images/marlla.jpg", alt: "Marlla Katherine" },
+              bio: "Médica responsável pela atuação clínica da equipe, atuando diretamente no atendimento e acompanhamento dos pacientes junto às unidades de saúde atendidas pela KM Consultoria.",
             },
             {
-              title: "Marlla",
-              description: "Médica Clínica",
-              photo: { src: "/images/marlla.jpg", alt: "Marlla" },
+              name: "Augusto Kayc",
+              role: "Engenheiro da Computação · Coordenador do Sistema de Informação SUS",
+              photo: { src: "/images/kayc.jpg", alt: "Augusto Kayc" },
+              bio: "Responsável pela área de tecnologia da KM Consultoria. Atua como Coordenador do Sistema de Informação do SUS, à frente da infraestrutura digital, sistemas e ferramentas que dão suporte à operação da empresa.",
             },
           ]}
         />
@@ -243,7 +249,7 @@ export default function Home() {
           description="Atendimento a prefeituras, gestão pública e unidades de saúde. Resposta rápida pelo WhatsApp."
           whatsapp={WHATSAPP}
           phone="(75) 9 9984-5134"
-          email="karinaenfa20@hotmail.com"
+          email="karinaenfa20@gmail.com"
           address="Rua Mon Senhor, nº 380 — Bairro Planaltino, Capim Grosso — BA, CEP 44.645-000"
         />
       </main>

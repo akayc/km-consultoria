@@ -63,7 +63,7 @@ export function Cards({
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
-              <Reveal key={item.title} delay={Math.min(i * 0.06, 0.3)}>
+              <Reveal key={item.title} delay={Math.min(i * 0.12, 0.6)}>
                 <div
                   className={cn(
                     "h-full rounded-2xl border p-6 transition-colors",
