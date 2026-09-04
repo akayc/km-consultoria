@@ -220,7 +220,7 @@ export default function Home() {
         <Team
           id="equipe"
           eyebrow="Equipe"
-          title="Quem toca a KM Consultoria"
+          title="Quem gerencia a KM Consultoria:"
           tone="surface"
           members={[
             {
