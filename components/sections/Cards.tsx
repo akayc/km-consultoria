@@ -59,19 +59,20 @@ export function Cards({
           </div>
         </Reveal>
 
-        <div className={cn("mt-12 grid grid-cols-1 gap-6", colClasses[columns])}>
+        <div className={cn("mt-12 grid grid-cols-1 gap-5 md:gap-6", colClasses[columns])}>
           {items.map((item, i) => {
             const Icon = item.icon;
             return (
               <Reveal key={item.title} delay={Math.min(i * 0.12, 0.6)}>
                 <div
                   className={cn(
-                    "h-full rounded-2xl border p-6 transition-colors",
+                    "group relative h-full overflow-hidden rounded-2xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(16,43,61,0.10)]",
                     decor
-                      ? "border-white/50 bg-bg/60 backdrop-blur-md hover:bg-bg/80"
-                      : "border-border bg-bg"
+                      ? "border-white/70 bg-bg/75 backdrop-blur-md hover:bg-bg/95"
+                      : "border-border bg-bg hover:border-primary/25"
                   )}
                 >
+                  <div aria-hidden className="absolute left-0 top-0 h-1 w-0 bg-accent transition-all duration-300 group-hover:w-full" />
                   {item.photo && (
                     <div className="relative mb-4 aspect-square w-16 overflow-hidden rounded-full">
                       <Image
@@ -83,9 +84,11 @@ export function Cards({
                     </div>
                   )}
                   {Icon && !item.photo && (
-                    <Icon className="mb-4 h-6 w-6 text-primary" strokeWidth={1.5} />
+                    <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-white">
+                      <Icon className="h-5 w-5" strokeWidth={1.6} />
+                    </div>
                   )}
-                  <h3 className="text-lg font-medium">{item.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight">{item.title}</h3>
                   {item.description && (
                     <p className="mt-2 text-sm text-muted">{item.description}</p>
                   )}

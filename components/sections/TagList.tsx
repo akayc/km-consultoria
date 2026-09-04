@@ -32,11 +32,11 @@ export function TagList({
           </div>
         </Reveal>
 
-        <div className="mt-14 space-y-10">
+        <div className="mt-12 space-y-5">
           {groups.map((group, i) => (
             <Reveal key={group.label} delay={Math.min(i * 0.15, 0.6)}>
-              <div className="overflow-hidden rounded-2xl border border-border bg-bg">
-                <div className="border-b border-border bg-surface px-6 py-5 md:px-8">
+              <div className="group overflow-hidden rounded-2xl border border-border bg-bg transition-all duration-300 hover:border-primary/25 hover:shadow-[0_16px_36px_rgba(16,43,61,0.08)]">
+                <div className="border-l-4 border-accent border-b border-border bg-surface px-6 py-5 md:px-8">
                   <h3 className="text-lg font-semibold">{group.label}</h3>
                   {group.description && (
                     <p className="mt-1 text-sm text-muted">{group.description}</p>
@@ -45,7 +45,7 @@ export function TagList({
                 <ul className="grid grid-cols-1 gap-x-8 gap-y-3 px-6 py-6 sm:grid-cols-2 md:px-8 lg:grid-cols-3">
                   {group.tags.map((tag) => (
                     <li key={tag} className="flex items-center gap-2.5 text-sm text-fg/85">
-                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                      <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-primary ring-4 ring-primary/10" />
                       {tag}
                     </li>
                   ))}

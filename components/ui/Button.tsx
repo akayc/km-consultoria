@@ -13,9 +13,9 @@ type ButtonProps = {
 
 const variants = {
   primary:
-    "bg-primary text-primary-foreground hover:opacity-90",
+    "bg-primary text-primary-foreground shadow-[0_8px_18px_rgba(7,93,143,0.22)] hover:-translate-y-0.5 hover:bg-[#064f78] hover:shadow-[0_12px_24px_rgba(7,93,143,0.28)]",
   outline:
-    "border border-border text-fg hover:bg-surface",
+    "border border-border bg-white/70 text-fg hover:-translate-y-0.5 hover:border-primary/30 hover:bg-white",
   ghost: "text-fg hover:bg-surface",
 };
 
@@ -29,7 +29,7 @@ export function Button({
   rel,
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-medium transition-colors",
+    "inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200",
     variants[variant],
     className
   );

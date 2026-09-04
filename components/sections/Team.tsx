@@ -32,11 +32,11 @@ export function Team({ id, eyebrow, title, description, members, tone = "default
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-3">
+        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-3">
           {members.map((member, i) => (
             <Reveal key={member.name} delay={Math.min(i * 0.15, 0.6)}>
-              <div className="text-center sm:text-left">
-                <div className="relative mx-auto aspect-square w-40 overflow-hidden rounded-2xl bg-bg sm:mx-0 sm:w-full">
+              <div className="group h-full rounded-2xl border border-border/70 bg-bg p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_18px_40px_rgba(16,43,61,0.09)] sm:text-left">
+                <div className="relative mx-auto aspect-[4/4.4] w-40 overflow-hidden rounded-xl bg-primary/10 sm:mx-0 sm:w-full">
                   {member.photo ? (
                     <Image
                       src={member.photo.src}
@@ -54,7 +54,7 @@ export function Team({ id, eyebrow, title, description, members, tone = "default
                     </div>
                   )}
                 </div>
-                <h3 className="mt-5 text-lg font-semibold">{member.name}</h3>
+                <h3 className="mt-5 text-lg font-semibold tracking-tight">{member.name}</h3>
                 <p className="mt-1 text-sm text-muted">{member.role}</p>
                 {member.bio && (
                   <p className="mt-3 text-sm leading-relaxed text-fg/70">{member.bio}</p>

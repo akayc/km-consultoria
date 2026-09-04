@@ -2,15 +2,15 @@
 
 /* KM Consultoria — paleta extraida da logo (azul institucional + vermelho). */
 :root {
-  --color-bg: #ffffff;
-  --color-fg: #16232e;
-  --color-muted: #5b6b76;
-  --color-surface: #f4f7f9;
-  --color-border: #e2e8ec;
+  --color-bg: #fcfdfe;
+  --color-fg: #102b3d;
+  --color-muted: #526b7a;
+  --color-surface: #eff5f8;
+  --color-border: #d9e5eb;
 
-  --color-primary: #0d5a90;
+  --color-primary: #075d8f;
   --color-primary-foreground: #ffffff;
-  --color-accent: #e2333c;
+  --color-accent: #db3b47;
   --color-accent-foreground: #ffffff;
 
   --font-body: var(--font-inter), system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -48,12 +48,22 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+
+::selection { background: color-mix(in srgb, var(--color-primary) 18%, white); }
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 65%, white);
+  outline-offset: 4px;
 }
 
 /* Padrão de pontos sutil — usado em seções com tone="decor" pra tirar o "branco cru" sem depender de fotos de terceiros. */
 .bg-dot-grid {
-  background-image: radial-gradient(var(--color-border) 1px, transparent 1px);
-  background-size: 22px 22px;
+  background-image: radial-gradient(color-mix(in srgb, var(--color-primary) 18%, transparent) 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
 /* Vars cruas usadas pelo aurora-background (substitui o plugin addVariablesForColors do Tailwind v3) */

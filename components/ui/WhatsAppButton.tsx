@@ -20,7 +20,7 @@ export function WhatsAppButton({
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp"
-        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-transform hover:scale-105"
+        className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#25D366] text-white shadow-[0_12px_28px_rgba(37,211,102,0.35)] transition-transform hover:scale-105"
       >
         <MessageCircle className="h-7 w-7" fill="currentColor" strokeWidth={0} />
       </a>
@@ -32,7 +32,7 @@ export function WhatsAppButton({
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center justify-center gap-2 rounded-md bg-[#25D366] px-5 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90"
+      className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_22px_rgba(37,211,102,0.22)] transition-all hover:-translate-y-0.5 hover:brightness-95"
     >
       <MessageCircle className="h-4 w-4" />
       Falar no WhatsApp
