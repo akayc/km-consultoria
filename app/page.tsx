@@ -229,7 +229,7 @@ export default function Home() {
               photo: {
                 src: "/images/karina-perfil.jpg",
                 alt: "Karina Michelle",
-                position: "center 20%",
+                position: "center 30%",
                 zoom: 1.4,
               },
             },
@@ -239,7 +239,7 @@ export default function Home() {
               photo: { 
                 src: "/images/marlla.jpg", 
                 alt: "Marlla Katherine", 
-                position: "center 40%"
+                position: "center 60%"
               },
               bio: "Médica responsável pela atuação clínica da equipe, atuando diretamente no atendimento e acompanhamento dos pacientes junto às unidades de saúde atendidas pela KM Consultoria.",
             },
@@ -247,7 +247,7 @@ export default function Home() {
               name: "Augusto Kayc",
               role: "Engenheiro da Computação · Coordenador do Sistema de Informação SUS",
               photo: {
-                src: "/images/kayc.jpg",
+                src: "/images/kaycprof.jpg",
                 alt: "Augusto Kayc",
                 position: "center 30%",
               },
