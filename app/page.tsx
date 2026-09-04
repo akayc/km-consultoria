@@ -172,13 +172,13 @@ export default function Home() {
             {
               title: "Ourolândia",
               description:
-                "Gerenciamento hospitalar, atenção básica e assistência social no Hospital Municipal e na Unidade de Saúde.",
+                "Gerenciamento hospitalar, Atenção Básica e assistência social no Hospital Municipal e na Unidade de Saúde.",
               icon: MapPin,
             },
             {
               title: "Várzea Nova",
               description:
-                "Serviços médicos, hospitalar, atenção básica e Centro de Doenças Respiratórias (Covid-19).",
+                "Serviços médicos, hospitalar, Atenção Básica e Centro de Doenças Respiratórias (Covid-19).",
               icon: MapPin,
             },
           ]}
@@ -197,15 +197,15 @@ export default function Home() {
           </p>
           <p>
             Experiência profissional como Coordenadora Administrativa da
-            atenção básica no Município de Riachão do Jacuípe, Diretora
+            Atenção Básica no Município de Riachão do Jacuípe, Diretora
             Administrativa do Hospital Municipal de Riachão do Jacuípe,
-            Diretora do Hospital Municipal de Itiúba e Coordenadora da atenção
-            básica.
+            Diretora do Hospital Municipal de Itiúba e Coordenadora da Atenção
+            Básica.
           </p>
           <p>
             Foi também Responsável Técnica do Instituto Médico e Cirúrgico da
-            Bahia (IMC), Assessora Técnica na atenção à saúde do Município de
-            Piraí do Norte, Assessora Técnica na atenção à saúde de média e
+            Bahia (IMC), Assessora Técnica na Atenção à Saúde do Município de
+            Piraí do Norte, Assessora Técnica na Atenção à Saúde de média e
             alta complexidade no Município de Ourolândia, Enfermeira
             plantonista no Hospital Municipal de Ourolândia e Coordenadora do
             Centro de Covid-19 do Município de Várzea Nova.
